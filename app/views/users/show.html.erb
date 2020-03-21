@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="col-xs-2"><div class="visible-lg"><%= image_tag 'mori.jpg', class:"ad" %></div></div>   
+    
+    <div class="col-xs-8">
+
+      <header>アカウントの作成</header>
+      <br>
+      <% if logged_in? %>
+        <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
+        <br><br>
+      <% else %>
+        <br><br>
+      <% end %>
+
+      <p><%= @user.name %>のページを作成しました</p>
+      <p>メールアドレス<%= @user.email %></p><br>
+      <%= image_tag(@user.image.url, :size =>'100x100') if @user.image && @user.image.url %>
+      <%= form.hidden_field :image_cache %>
+      <%= link_to '投稿一覧に移動する', pictures_path(@user.id), class: 'btn btn-primary'  %><br>
+
+      <footer>
+        <div class="company">© Picture Corp. All RIGHTS RESERVED.</div>
+      </fotter>
+
+    </div>
+    <div class="col-xs-2"><div class="visible-lg"><%= image_tag 'making_150202_03.jpg', class:"ad" %></div></div>
+</div>
