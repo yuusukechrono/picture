@@ -6,10 +6,10 @@
       <header>ログイン</header>
       <br>
       <% if logged_in? %>
-        <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
+        <%= link_to "ログアウト", session_path(current_user.id), method: :delete,class: 'btn btn-primary' %>
         <br><br>
       <% else %>
-        <%= link_to "アカウント作成", new_user_path %>
+        <%= link_to "アカウント作成", new_user_path, class: 'btn btn-primary'  %>
         <br><br>
       <% end %>
 
@@ -21,8 +21,9 @@
       <%= f.label :email %>
       <%= f.email_field :email %><br>
       <%= f.label :password %>
-      <%= f.password_field :password %><br>
-      <%= f.submit "ログイン" %>
+      <%= f.password_field :password %><br><br>
+      <%= f.submit "ログイン", class: 'btn btn-primary'%>
+      <br><br>
       <% end %>
 
       <footer>

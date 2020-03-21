@@ -9,7 +9,7 @@
 
       <div class=row>
         <div class="top-bottom">
-          <%= link_to "Logout", session_path(current_user.id), method: :delete, class: 'btn btn-primary' %><br><br>
+          <%= link_to "ログアウト", session_path(current_user.id), method: :delete, class: 'btn btn-primary' %>  <%= link_to 'ユーザー編集', edit_user_path(current_user.id), class: 'btn btn-primary' %><br><br>
           <%= link_to '新しい投稿をする', new_picture_path, class: 'btn btn-primary'  %>
         </div>
       </div>

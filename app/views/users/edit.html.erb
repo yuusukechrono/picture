@@ -6,10 +6,10 @@
       <header>新規登録</header>
       <br>
       <% if logged_in? %>
-        <%= link_to "ログアウト", session_path(current_user.id), method: :delete,class: 'btn btn-primary'  %>
+        <%= link_to "ログアウト", session_path(current_user.id), method: :delete,  class: 'btn btn-primary' %>
         <br><br>
       <% else %>
-        <%= link_to "ログイン", new_session_path, class: 'btn btn-primary' %>
+        <%= link_to '投稿一覧に移動する', pictures_path(@user.id), class: 'btn btn-primary'  %>
         <br><br>
       <% end %>
 
@@ -33,10 +33,11 @@
         <%= f.password_field:password %><br>
         <%= f.label :password_confirmation %>
         <%= f.password_field :password_cofirmation %><br>
-        <%= f.label :写真をアップロード %> <%= f.file_field  :image %>
+        <%= f.label :写真をアップロード,class: 'btn btn-primary'  %>   
+        <%= f.file_field  :image %>
         <%= f.hidden_field  :image_cache %>
-        <br>
-        <%= f.submit "アカウントの作成",class: 'btn btn-primary'  %>
+
+        <%= f.submit "アカウントの変更",class: 'btn btn-primary'  %>
         <br>
       <% end %>
 
