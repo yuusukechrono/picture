@@ -17,6 +17,7 @@ def create
     render :new
   else
     if @picture.save
+      ReportMailer.report_mail(@picture).deliver
       redirect_to pictures_path, notice: "投稿を作成しました！"
     else
     render :new

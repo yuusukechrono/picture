@@ -1,0 +1,4 @@
+<p>投稿しました！</p>
+<p>name: <%= @report.user.name %></p>
+<p>content: <%= @report.content %></p>
+<%= image_tag(@report.upload.url, :size =>'410x300', class:"panel-body.picture")  if @report.upload.present?%>
