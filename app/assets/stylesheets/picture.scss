@@ -1,0 +1,84 @@
+header{
+  width:100%;
+  background-color: #4d9ac0;
+  height: 50px;
+  color:black;
+  font-size:30px;
+  text-align:center;
+}
+
+footer{
+  position: relative;
+  width:100%;
+  height: 50px;
+  background-color:  #4d9ac0;
+  color:black;
+}
+
+.ad {
+  position:absolute;
+  max-width: 100%;
+  height: auto;
+  top:50px;
+}
+
+.company{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform : translate(-50%,-50%);
+  font-size:16px;
+}
+
+.content{
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.top-bottom{
+  height: 100px;
+  width: 700px;
+  margin: 0 auto;
+}
+
+.panel panel-info{
+  width:100%;
+  height:100%;
+}
+
+.panel-heading{
+  position: relative;
+  width: 100%;
+  height: 45px;
+}
+
+.panel-body{
+  position: relative;
+  width:100%;
+  height:auto;
+  .picture{
+    height:300px;
+  }
+  .bottom-text{
+    position: absolute;
+    bottom:20px;
+  }
+}
+
+.panel-footer{
+  width:100%;
+  height: 50px;
+  background-color: #d9edf7;
+}
+
+p{
+  font-size:16px;
+}
+
+.input-content{ 
+  padding:5px;
+  border:solid 1px #ccc;
+  width:500px;
+  height:100px;
+}

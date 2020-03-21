@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="col-md-2"><div class="visible-lg"><%= image_tag 'mori.jpg', class:"ad" %></div> </div>  
+  <div class="col-md-8">
+    <header class="header">投稿</header>
+
+    <%= form_with(model: @picture, local: true, url: choose_new_or_edit ) do |form| %>
+      <% if @picture.errors.any? %>
+        <div id="error_explanation">
+          <p><%= @picture.errors.count %>件のエラーがあります。</p>
+          <ul>
+          <% @picture.errors.full_messages.each do |msg| %>
+           <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+  
+    <br>
+    <div class="row">
+      <div class="content">
+        <div class="panel panel-info">
+          <div class="panel-body">
+            <%= form.label :写真をアップロード %>   
+            <%= form.file_field  :upload %>
+            <%= form.hidden_field  :upload_cache %>
+            <%= form.text_area :content,  class: 'input-content', id: 'input-text'%><p id="counter">0文字/50文字</p>
+          </div>
+          <div class="panel-footer">
+            <%= form.submit '登録する', class: 'btn btn-primary' %>
+          </div>
+        </div>
+      </div>
+      <div class=row>
+        <div class="top-bottom">
+          <%= link_to '投稿一覧へ', pictures_path, class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="company">© Picture Corp. All RIGHTS RESERVED.</div>
+    </fotter>
+  </div>
+
+  <div class="col-md-2"><div class="visible-lg"><%= image_tag 'making_150202_03.jpg', class:"ad" %></div></div>
+</div>
+<% end %>

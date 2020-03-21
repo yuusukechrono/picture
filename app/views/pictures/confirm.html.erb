@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="col-md-2"><div class="visible-lg"><%= image_tag 'mori.jpg', class:"ad" %></div> </div>  
+
+  <div class="col-md-8">
+    <header class="header">投稿確認画面</header>
+    <br>
+    <p>以下の内容で、送信する。</p>
+    <div class="row">
+      <div class="content">
+        <%= form_with(model: @picture, url: pictures_path, local: true) do |form| %>
+          <div class="panel panel-info">
+            <div class="panel-body">
+              <%= image_tag(@picture.upload.url, :size =>'410x300') if @picture.upload && @picture.upload.url %>
+              <%= form.hidden_field :upload_cache %>
+              <%= form.hidden_field :content %>
+              <p><%= @picture.content %></p>
+            </div>
+            <div class="panel-footer">
+              <%= form.submit "登録する", class: 'btn btn-primary' %>
+              <%= form.submit "戻る", name: 'back', class: 'btn btn-primary' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class=row>
+      <div class="top-bottom">    
+        <%= link_to '投稿一覧へ', pictures_path, class: 'btn btn-primary'  %>
+      </div>
+    </div>
+    <footer>
+      <div class="company">© Picture Corp. All RIGHTS RESERVED.</div>
+    </fotter>
+  </div>
+
+  <div class="col-md-2"><div class="visible-lg"><%= image_tag 'making_150202_03.jpg', class:"ad" %></div></div>
+</div>

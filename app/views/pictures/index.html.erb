@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="col-xs-2"><div class="visible-lg"><%= image_tag 'mori.jpg', class:"ad" %></div></div>   
+    
+    <div class="col-xs-8">
+    
+      <header>投稿一覧</header>
+      <br>
+      <p><%= notice %></p>
+
+      <div class=row>
+        <div class="top-bottom">
+          <%= link_to "Logout", session_path(current_user.id), method: :delete, class: 'btn btn-primary' %><br><br>
+          <%= link_to '新しい投稿をする', new_picture_path, class: 'btn btn-primary'  %>
+        </div>
+      </div>
+
+      <div class="row">
+      <% @pictures.reverse_each do |picture| %>
+          <div class="content">
+            <div class="panel panel-info">
+              <div class="panel-heading">
+                <p><%= image_tag(picture.user.image.url, :size =>'30x30', class:"panel-body.picture")  if picture.user.image.present?%>         <%= picture.user.name %></p>
+              </div>
+              <div class="panel-body">
+                <br>
+                <%= image_tag(picture.upload.url, :size =>'410x300', class:"panel-body.picture")  if picture.upload.present?%>
+                <br>
+                <p><%= picture.content %></p>
+                <div class="panel-body.bottom-text"><%= picture.created_at %></div>
+              </div>
+
+              <% if current_user.id == picture.user.id %>
+                <div class="panel-footer">
+                 <%= link_to '閲覧', picture_path(picture.id), class: 'btn btn-primary' %>
+                 <%= link_to '編集', edit_picture_path(picture.id), class: 'btn btn-primary'  %>
+                 <%= link_to '削除', picture_path(picture.id),class: 'btn btn-primary', method: :delete ,data: { confirm: '本当に削除していいですか？' } %>
+                 </div>
+                 <% end %>
+            </div>
+          </div>
+      <% end %>
+      </div>
+      <footer>
+        <div class="company">© Picture Corp. All RIGHTS RESERVED.</div>
+      </fotter>
+    </div>
+    <div class="col-xs-2"><div class="visible-lg"><%= image_tag 'making_150202_03.jpg', class:"ad" %></div></div>
+</div>

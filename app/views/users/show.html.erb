@@ -15,7 +15,8 @@
       <p><%= @user.name %>のページを作成しました</p>
       <p>メールアドレス<%= @user.email %></p><br>
       <%= image_tag(@user.image.url, :size =>'100x100') if @user.image && @user.image.url %>
-      <%= form.hidden_field :image_cache %>
+      <%# <%= form.hidden_field :@user.image_cache %>
+      <br>
       <%= link_to '投稿一覧に移動する', pictures_path(@user.id), class: 'btn btn-primary'  %><br>
 
       <footer>

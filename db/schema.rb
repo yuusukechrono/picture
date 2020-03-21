@@ -1,4 +1,5 @@
-ActiveRecord::Schema.define(version: 2020_03_21_064931) do
+ActiveRecord::Schema.define(version: 2020_03_21_143029) do
+
 
   enable_extension "plpgsql"
 
@@ -6,6 +7,8 @@ ActiveRecord::Schema.define(version: 2020_03_21_064931) do
     t.text "upload"
     t.text "content"
     t.bigint "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["user_id"], name: "index_pictures_on_user_id"
   end
 
