@@ -36,9 +36,11 @@
         <%= f.label :写真をアップロード,class: 'btn btn-primary'  %>   
         <%= f.file_field  :image %>
         <%= f.hidden_field  :image_cache %>
-
-        <%= f.submit "アカウントの変更",class: 'btn btn-primary'  %>
         <br>
+        <%= f.submit "アカウントの変更",class: 'btn btn-primary'  %>
+        <br><br>
+        <%= link_to '投稿一覧へ', pictures_path, class: 'btn btn-primary' %>
+        <br><br>
       <% end %>
 
       <footer>
