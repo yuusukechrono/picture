@@ -38,10 +38,10 @@
                 </div>
               <% else %>
                 <div class="panel-footer">
-                  <% if current_user.favorites.find_by(picture.id).present? %>
-                    <%= link_to 'お気に入り解除する' , picture_favorites_path(current_user.favorites.find_by(picture.id)), method: :delete, class: 'btn btn-primary' %>
+                  <% if current_user.favorites.find_by(picture_id: picture.id).present? %>
+                  <%= link_to 'お気に入り解除する' , picture_favorite_path(picture.id, current_user.favorite_ids.find(picture.id).first), method: :delete, class: 'btn btn-primary' %>    
                   <% else %>
-                    <%= link_to 'お気に入りする' , picture_favorites_path(picture.id) , method: :create, class: 'btn btn-primary' %>                
+                  <%= link_to 'お気に入りする' , picture_favorites_path(picture.id) , method: :create, class: 'btn btn-primary' %>            
                   <% end %>
                 </div>
               <% end %>     
