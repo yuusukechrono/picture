@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   resources :users, only: [:new, :create, :show, :edit, :update]
   resources :sessions, only: [:new, :create, :destroy]
+  resources :favorites, only: [:index]
   resources :picture do
     resources :favorites, only: [:create, :destroy]
   end
