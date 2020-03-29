@@ -5,7 +5,7 @@ ja:
       user: ユーザー
     attributes:
       picture:
-        image: 画像
+        upload: 画像
         content: 内容
         created_at: 作成日
         updated_at: 更新日

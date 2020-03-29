@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :login_required
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :update]
 
   def new
     @user = User.new
@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+      @user = User.find(current_user.id)
   end
   
   def update
