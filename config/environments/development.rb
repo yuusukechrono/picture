@@ -4,7 +4,7 @@ Rails.application.configure do
 
   config.eager_load = false
 
-  config.consider_all_requests_local = false
+  config.consider_all_requests_local = true
  # 開発時は戻す。
 
   if Rails.root.join('tmp', 'caching-dev.txt').exist?
